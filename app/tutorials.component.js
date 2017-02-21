@@ -13,12 +13,13 @@ var TutorialsComponent = (function () {
     function TutorialsComponent() {
         this.title = "Wasif Ateeq";
         this.imglink = "http://lorempixel.com/400/200/";
+        this.check = false;
     }
     TutorialsComponent = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "<h2>{{title}}</h2>\n  \t\t\t<img [src]=\"imglink\">\n  \t\t\t<input type=\"text\" value=\"angular\">\n  \t\t\t<h3>Hello blue</h3>",
-            styles: ["h3 {\n  color : red;\n  }"]
+            template: "<h2>{{title}}</h2>\n  \t\t\t<img [src]=\"imglink\"><br><br>\n  \t\t\t<input type=\"text\" value=\"angular\">\n  \t\t\t<h3>Hello blue</h3>\n  \t\t\t<div [class.myClass]=\"check\">RED</div>\n  \t\t\t<div [style.color]=\"check ? 'blue' :'orange'\">Checking</div>\n  \t\t\t",
+            styles: [".myClass {\n  color : red;\n  }"]
         }), 
         __metadata('design:paramtypes', [])
     ], TutorialsComponent);
