@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
   			<h3>Hello blue</h3>
   			<div [class.myClass]="check">RED</div>
   			<div [style.color]="check ? 'blue' :'orange'">Checking</div>
+  			<button (click)="onClick(democlick.value)">Click ME</button>
+  			<input type="text" #democlick>
   			`,
   styles : [`.myClass {
   color : red;
@@ -17,4 +19,10 @@ export class TutorialsComponent {
 public title="Wasif Ateeq";
 public imglink="http://lorempixel.com/400/200/";
 public check=false;
+
+onClick(value)
+{
+	console.log(value);
+}
+
 }
