@@ -11,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var TutorialsComponent = (function () {
     function TutorialsComponent() {
+        this.title = "Wasif Ateeq";
+        this.imglink = "http://lorempixel.com/400/200/";
     }
     TutorialsComponent = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "<h2>Hello Wasif Again</h2>\n  \t\t\t<h3>Hello blue</h3>",
+            template: "<h2>{{title}}</h2>\n  \t\t\t<img [src]=\"imglink\">\n  \t\t\t<input type=\"text\" value=\"angular\">\n  \t\t\t<h3>Hello blue</h3>",
             styles: ["h3 {\n  color : red;\n  }"]
         }), 
         __metadata('design:paramtypes', [])
