@@ -10,6 +10,9 @@ import { Component } from '@angular/core';
   			<div [style.color]="check ? 'blue' :'orange'">Checking</div>
   			<button (click)="onClick(democlick.value)">Click ME</button>
   			<input type="text" #democlick>
+  			<input type="text" [(ngModel)]="fname">
+  			<input type="text" [(ngModel)]="lname">
+  			Full Name :{{fname}}{{lname}}
   			`,
   styles : [`.myClass {
   color : red;
@@ -19,7 +22,8 @@ export class TutorialsComponent {
 public title="Wasif Ateeq";
 public imglink="http://lorempixel.com/400/200/";
 public check=false;
-
+public fname;
+public lname;
 onClick(value)
 {
 	console.log(value);
