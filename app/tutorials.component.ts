@@ -25,16 +25,19 @@ import { Component } from '@angular/core';
   			</ul>
   			<p [ngClass]="{classOne:cone}">NGCLASS</p>
   			<button (click)="onClicked()">Toggle Me</button>
+  			<p>Data from parent is </p>{{parentData}}
   			`,
   styles : [`.classOne{
 color:red;
-  }`]
+  }`],
+  inputs:['parentData']
              })
 export class TutorialsComponent { 
 public title="Wasif Ateeq";
 public imglink="http://lorempixel.com/400/200/";
 public check=false;
 public fname;
+public parentData:string;
 public lname;
 public showelement=true;
 public color="blue";
