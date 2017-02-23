@@ -16,16 +16,21 @@ var TutorialsComponent = (function () {
         this.check = false;
         this.showelement = true;
         this.color = "blue";
+        this.cone = true;
+        this.style = "italic";
         this.colors = ['blue', 'red', 'green'];
     }
     TutorialsComponent.prototype.onClick = function (value) {
         console.log(value);
     };
+    TutorialsComponent.prototype.onClicked = function () {
+        this.cone = !this.cone;
+    };
     TutorialsComponent = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "<h2>{{title}}</h2>\n  \t\t\t<img [src]=\"imglink\"><br><br>\n  \t\t\t<input type=\"text\" value=\"angular\">\n  \t\t\t<h3>Hello blue</h3>\n  \t\t\t<div [class.myClass]=\"check\">RED</div>\n  \t\t\t<div [style.color]=\"check ? 'blue' :'orange'\">Checking</div>\n  \t\t\t<button (click)=\"onClick(democlick.value)\">Click ME</button>\n  \t\t\t<input type=\"text\" #democlick>\n  \t\t\t<br>\n  \t\t\t<input type=\"text\" [(ngModel)]=\"fname\">\n  \t\t\t<input type=\"text\" [(ngModel)]=\"lname\">\n  \t\t\tFull Name :{{fname}}{{lname}}\n  \t\t\t<br>\n  \t\t\t<p *ngIf=\"showelement\">Show Element</p>\n  \t\t\t<div [ngSwitch]=\"color\">\n  \t\t\t<p *ngSwitchWhen=\"'red'\">Red Color</p>\n  \t\t\t<p *ngSwitchWhen=\"'blue'\">Blue Color</p>\n  \t\t\t<p *ngSwitchDefault>Invalid Color</p>\n  \t\t\t</div>\n  \t\t\t<ul>\n  \t\t\t<li *ngFor=\"let color of colors\">{{color}}</li>\n  \t\t\t</ul>\n\n  \t\t\t",
-            styles: [".myClass {\n  color : red;\n  }"]
+            template: "<h2>{{title}}</h2>\n  \t\t\t<img [src]=\"imglink\"><br><br>\n  \t\t\t<input type=\"text\" value=\"angular\">\n  \t\t\t<h3>Hello blue</h3>\n  \t\t\t<div [style.color]=\"check ? 'blue' :'orange'\">Checking</div>\n  \t\t\t<button (click)=\"onClick(democlick.value)\">Click ME</button>\n  \t\t\t<input type=\"text\" #democlick>\n  \t\t\t<br>\n  \t\t\t<input type=\"text\" [(ngModel)]=\"fname\">\n  \t\t\t<input type=\"text\" [(ngModel)]=\"lname\">\n  \t\t\tFull Name :{{fname}}{{lname}}\n  \t\t\t<br>\n  \t\t\t<p *ngIf=\"showelement\">Show Element</p>\n  \t\t\t<div [ngSwitch]=\"color\">\n  \t\t\t<p *ngSwitchWhen=\"'red'\">Red Color</p>\n  \t\t\t<p *ngSwitchWhen=\"'blue'\">Blue Color</p>\n  \t\t\t<p *ngSwitchDefault>Invalid Color</p>\n  \t\t\t</div>\n  \t\t\t<ul>\n  \t\t\t<li *ngFor=\"let color of colors\">{{color}}</li>\n  \t\t\t</ul>\n  \t\t\t<p [ngClass]=\"{classOne:cone}\">NGCLASS</p>\n  \t\t\t<button (click)=\"onClicked()\">Toggle Me</button>\n  \t\t\t",
+            styles: [".classOne{\ncolor:red;\n  }"]
         }), 
         __metadata('design:paramtypes', [])
     ], TutorialsComponent);

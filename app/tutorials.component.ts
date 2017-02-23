@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   			<img [src]="imglink"><br><br>
   			<input type="text" value="angular">
   			<h3>Hello blue</h3>
-  			<div [class.myClass]="check">RED</div>
   			<div [style.color]="check ? 'blue' :'orange'">Checking</div>
   			<button (click)="onClick(democlick.value)">Click ME</button>
   			<input type="text" #democlick>
@@ -24,10 +23,11 @@ import { Component } from '@angular/core';
   			<ul>
   			<li *ngFor="let color of colors">{{color}}</li>
   			</ul>
-
+  			<p [ngClass]="{classOne:cone}">NGCLASS</p>
+  			<button (click)="onClicked()">Toggle Me</button>
   			`,
-  styles : [`.myClass {
-  color : red;
+  styles : [`.classOne{
+color:red;
   }`]
              })
 export class TutorialsComponent { 
@@ -38,10 +38,15 @@ public fname;
 public lname;
 public showelement=true;
 public color="blue";
+public cone=true;
+public style="italic";
 public colors=['blue','red','green'];
 onClick(value)
 {
 	console.log(value);
 }
-
+onClicked()
+{
+	this.cone=!this.cone;
+}
 }
