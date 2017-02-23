@@ -26,6 +26,9 @@ import { Component } from '@angular/core';
   			<p [ngClass]="{classOne:cone}">NGCLASS</p>
   			<button (click)="onClicked()">Toggle Me</button>
   			<p>Data from parent is </p>{{parentData}}
+  			<p>{{date|date:"MM/dd/yy"}}
+  			  			<p>{{date|date:"shortdate"}}
+
   			`,
   styles : [`.classOne{
 color:red;
@@ -39,6 +42,7 @@ public check=false;
 public fname;
 public parentData:string;
 public lname;
+public date=new Date();
 public showelement=true;
 public color="blue";
 public cone=true;
