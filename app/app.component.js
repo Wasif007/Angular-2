@@ -7,20 +7,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var AppComponent = (function () {
     function AppComponent() {
-        this.defaultName = "WAsif";
+        this.userForm = new forms_1.FormGroup({
+            name: new forms_1.FormControl(),
+            street: new forms_1.FormControl(),
+            country: new forms_1.FormControl(),
+            postalcode: new forms_1.FormControl(),
+            address: new forms_1.FormControl(),
+            city: new forms_1.FormControl()
+        });
     }
-    AppComponent.prototype.onSubmit = function (value) {
-        console.log(value);
+    AppComponent.prototype.onSubmit = function () {
+        console.log(this.userForm.value);
     };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        templateUrl: 'app/app.component.html',
-        styles: ["input.ng-valid{border-left:5px solid green;}\n  input.ng-invalid{border-left:5px solid red;}"]
+        templateUrl: 'app/app.component_2.html'
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
