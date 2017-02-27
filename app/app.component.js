@@ -19,7 +19,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        templateUrl: 'app/app.component.html'
+        templateUrl: 'app/app.component.html',
+        styles: ["input.ng-valid{border-left:5px solid green;}\n  input.ng-invalid{border-left:5px solid red;}"]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
