@@ -11,10 +11,10 @@ var forms_1 = require("@angular/forms");
 var AppComponent = (function () {
     function AppComponent() {
         this.userForm = new forms_1.FormGroup({
-            name: new forms_1.FormControl('wasif', [forms_1.Validators.required, forms_1.Validators.minLength(4)]),
+            name: new forms_1.FormControl('Was', [forms_1.Validators.required, forms_1.Validators.minLength(4), forms_1.Validators.maxLength(10)]),
             street: new forms_1.FormControl(),
             country: new forms_1.FormControl(),
-            postalcode: new forms_1.FormControl(),
+            postalcode: new forms_1.FormControl(null, forms_1.Validators.pattern('^[0-9][1-9]{4}')),
             address: new forms_1.FormControl(),
             city: new forms_1.FormControl()
         });

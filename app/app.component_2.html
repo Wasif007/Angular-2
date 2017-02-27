@@ -11,6 +11,9 @@
           <div *ngIf="userForm.controls['name'].hasError('minlength')" class="alert alert-danger">
         Enter atleast 4 characters
         </div>
+         <div *ngIf="userForm.controls['name'].hasError('maxlength')" class="alert alert-danger">
+        Enter name must not exceed 10 characters
+        </div>
     </div>
     
     <div class="form-group">
@@ -30,6 +33,9 @@
         <label>PostalCode:
         </label>
         <input type="text" class="form-control" formControlName="postalcode">
+          <div *ngIf="userForm.controls['postalcode'].hasError('pattern')" class="alert alert-danger">
+        Must follow the pattern
+        </div>
     </div>
 
     <div class="form-group">
@@ -38,6 +44,6 @@
         <input type="text"  class="form-control" formControlName="address">
     </div>
 
-<button  type="submit" class="btn btn-primary">Submit</button>
+<button  type="submit" [disabled]="!userForm.valid"class="btn btn-primary">Submit</button>
     </form>
 </div>

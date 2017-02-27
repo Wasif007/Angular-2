@@ -11,10 +11,10 @@ import {FormGroup,FormControl,Validators} from '@angular/forms';
 })
 export class AppComponent { 
    userForm=new FormGroup({
-     name:new FormControl('wasif',[Validators.required,Validators.minLength(4)]),
+     name:new FormControl('Was',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]),
      street:new FormControl(),
      country:new FormControl(),
-     postalcode:new FormControl(),
+     postalcode:new FormControl(null,Validators.pattern('^[0-9][1-9]{4}')),
      address:new FormControl(),
      city:new FormControl()
    });
