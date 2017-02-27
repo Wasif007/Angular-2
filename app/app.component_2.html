@@ -4,7 +4,13 @@
     <div class="form-group" >
         <label>Name:
         </label>
-        <input type="text"   class="form-control" formControlName="name">
+        <input type="text"   #refName class="form-control" formControlName="name">
+        <div *ngIf="userForm.controls['name'].hasError('required')" class="alert alert-danger">
+        Enter the name
+        </div>
+          <div *ngIf="userForm.controls['name'].hasError('minlength')" class="alert alert-danger">
+        Enter atleast 4 characters
+        </div>
     </div>
     
     <div class="form-group">
