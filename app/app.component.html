@@ -4,9 +4,14 @@
     <div class="form-group">
         <label>Name:
         </label>
-        <input type="text" required #nameRef="ngModel" name="name"  class="form-control" ngModel>
-  <div [hidden]="nameRef.valid || nameRef.pristine" class="alert alert-danger">
-Please enter name
+        <input type="text" minlength="4" required #nameRef="ngModel" name="name"  class="form-control" ngModel>
+  <div *ngIf="nameRef.errors && (nameRef.touched || nameRef.dirty)" class="alert alert-danger">
+<div [hidden]="!nameRef.errors.minlength">
+Length should be of minimum 4
+</div>
+<div [hidden]="!nameRef.errors.required">
+Name is not provided
+</div>
   </div>
     </div>
     
@@ -32,13 +37,17 @@ Please enter country
     <div class="form-group">
         <label>PostalCode:
         </label>
-        <input type="text" name="postalcode" required #postalCodeRef="ngModel" class="form-control" ngModel>
-    <div [hidden]="postalCodeRef.valid || postalCodeRef.pristine" class="alert alert-danger">
-Please enter postal code
+        <input type="text" name="postalcode" pattern="^[1-9][0-9]{3}$" required #postalCodeRef="ngModel" class="form-control" ngModel>
+    <div *ngIf="postalCodeRef.errors && (postalCodeRef.touched || postalCodeRef.dirty)" class="alert alert-danger">
+<div [hidden]="!postalCodeRef.errors.pattern">
+Pattern is not followed
+</div>
+<div [hidden]="!postalCodeRef.errors.required">
+Something is not provided
+</div>
   </div>
     </div>
 
-    
     <div class="form-group">
         <label>Address:
         </label>
