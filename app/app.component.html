@@ -1,6 +1,6 @@
 <div class="container">
     <h1>User Data</h1>
-    <form  #formdata="ngForm" (ngSubmit)="onSubmit(formdata.value)" >
+    <form  #formdata="ngForm" (ngSubmit)="onSubmit(formdata.value)" novalidate>
     <div class="form-group">
         <label>Name:
         </label>
@@ -59,6 +59,6 @@ Please enter address
 
    
     
-<button type="submit">Submit</button>
+<button [disabled]="!formdata.form.valid" type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
