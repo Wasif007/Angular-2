@@ -5,23 +5,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var tutorials_component_1 = require('./tutorials.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.defaultName = "WAsif";
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Hello Wasif</h1>\n  <label>Enter something to be printed in child</label>\n  <input type=\"text\" #pdata (keyup)=\"0\">\n  <my-tutorial [parentData]=\"pdata.value\"></my-tutorial>",
-            directives: [tutorials_component_1.TutorialsComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
+    AppComponent.prototype.onSubmit = function (value) {
+        console.log(value);
+    };
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'my-app',
+        templateUrl: 'app/app.component.html'
+    })
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
