@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {FormGroup,FormControl,Validators} from '@angular/forms';
+import { Component ,OnInit} from '@angular/core';
+import {FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms';
 @Component({
   selector: 'my-app',
   templateUrl: 'app/app.component_2.html',
@@ -9,7 +9,22 @@ import {FormGroup,FormControl,Validators} from '@angular/forms';
   `]
  
 })
-export class AppComponent { 
+export class AppComponent implements OnInit{ 
+ 
+ userForm:FormGroup;
+ constructor(private _formBuilder:FormBuilder){};
+ ngOnInit(){
+   this.userForm=this._formBuilder.group({
+    name:['Wasi',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]],
+    street:[],
+    country:[],
+    address:[],
+    city:[],
+    postalcode:['',[Validators.pattern('^[0-9][0-9]{4}')]]
+   });
+ }
+ /*
+
    userForm=new FormGroup({
      name:new FormControl('Was',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]),
      street:new FormControl(),
@@ -18,7 +33,7 @@ export class AppComponent {
      address:new FormControl(),
      city:new FormControl()
    });
-
+*/
    onSubmit(){
      console.log(this.userForm.value);
    }
