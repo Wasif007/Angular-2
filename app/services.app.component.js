@@ -7,21 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var forms_1 = require("@angular/forms");
-var forms_2 = require("@angular/forms");
-var services_app_component_1 = require("./services.app.component");
-var AppModule = (function () {
-    function AppModule() {
+var ServicesComponent = (function () {
+    function ServicesComponent() {
     }
-    return AppModule;
+    return ServicesComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_2.FormsModule, forms_1.ReactiveFormsModule],
-        declarations: [services_app_component_1.ServicesComponent],
-        bootstrap: [services_app_component_1.ServicesComponent]
+ServicesComponent = __decorate([
+    core_1.Component({
+        selector: 'employee-data',
+        template: "<h1>Wasif</h1>"
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], ServicesComponent);
+exports.ServicesComponent = ServicesComponent;
+//# sourceMappingURL=services.app.component.js.map

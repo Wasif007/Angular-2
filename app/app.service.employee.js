@@ -7,21 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var forms_1 = require("@angular/forms");
-var forms_2 = require("@angular/forms");
-var services_app_component_1 = require("./services.app.component");
-var AppModule = (function () {
-    function AppModule() {
+var EmployeeServiceClass = (function () {
+    function EmployeeServiceClass() {
     }
-    return AppModule;
+    EmployeeServiceClass.prototype.getEmployeeData = function () {
+        return [
+            { "id": 1, "name": "Wasif", "address": "Gulberg" },
+            { "id": 2, "name": "Asif", "address": "Gulberg 3" }
+        ];
+    };
+    return EmployeeServiceClass;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_2.FormsModule, forms_1.ReactiveFormsModule],
-        declarations: [services_app_component_1.ServicesComponent],
-        bootstrap: [services_app_component_1.ServicesComponent]
-    })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+EmployeeServiceClass = __decorate([
+    core_1.Injectable()
+], EmployeeServiceClass);
+//# sourceMappingURL=app.service.employee.js.map
