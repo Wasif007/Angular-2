@@ -11,9 +11,10 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var forms_2 = require("@angular/forms");
 var http_1 = require("@angular/http");
-var services_app_component_1 = require("./services.app.component");
-var employee_data_1 = require("./employee.data");
-var employee_data_detail_1 = require("./employee.data.detail");
+var router_1 = require("@angular/router");
+var router_class_1 = require("./router.class");
+var employeee_class_1 = require("./employeee.class");
+var department_class_1 = require("./department.class");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,9 +22,12 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_2.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule],
-        declarations: [services_app_component_1.ServicesComponent, employee_data_1.EmployeeData, employee_data_detail_1.EmployeeDataDetail],
-        bootstrap: [services_app_component_1.ServicesComponent]
+        imports: [platform_browser_1.BrowserModule, forms_2.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, router_1.RouterModule.forRoot([
+                { path: '/department', component: department_class_1.DepartmentClass },
+                { path: '/employees', component: employeee_class_1.EmployeeClass }
+            ])],
+        declarations: [router_class_1.RouterComponent, employeee_class_1.EmployeeClass, department_class_1.DepartmentClass],
+        bootstrap: [router_class_1.RouterComponent]
     })
 ], AppModule);
 exports.AppModule = AppModule;
