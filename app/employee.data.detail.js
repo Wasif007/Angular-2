@@ -18,14 +18,14 @@ var EmployeeDataDetail = (function () {
     }
     EmployeeDataDetail.prototype.ngOnInit = function () {
         var _this = this;
-        this._empl.getEmployeeData().subscribe(function (empDatas) { return _this.employess = empDatas; });
+        this._empl.getEmployeeData().subscribe(function (empDatas) { return _this.employess = empDatas; }, function (empDataError) { return _this.errrMsg = empDataError; });
     };
     return EmployeeDataDetail;
 }());
 EmployeeDataDetail = __decorate([
     core_1.Component({
         selector: 'employee-data-detail',
-        template: "<h2>Wasif Ateeq<h2>\n  <ul *ngFor=\"let emplo of employess\">\n  <li>{{emplo.name}} {{emplo.id}}</li>\n  <ul>"
+        template: "<h2>Wasif Ateeq<h2>\n    <h3>{{errrMsg}}</h3>\n\n  <ul *ngFor=\"let emplo of employess\">\n  <li>{{emplo.name}} {{emplo.id}}</li>\n  <ul>"
     }),
     __metadata("design:paramtypes", [app_service_employee_1.EmployeeServiceClass])
 ], EmployeeDataDetail);
