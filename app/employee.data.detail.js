@@ -17,7 +17,8 @@ var EmployeeDataDetail = (function () {
         this.employess = [];
     }
     EmployeeDataDetail.prototype.ngOnInit = function () {
-        this.employess = this._empl.getEmployeeData();
+        var _this = this;
+        this._empl.getEmployeeData().subscribe(function (empDatas) { return _this.employess = empDatas; });
     };
     return EmployeeDataDetail;
 }());

@@ -16,7 +16,7 @@ constructor(private _empl:EmployeeServiceClass){}
 
 
     ngOnInit(){
-this.employess=this._empl.getEmployeeData();
+this._empl.getEmployeeData().subscribe(empDatas =>this.employess=empDatas);
 
     } 
    
