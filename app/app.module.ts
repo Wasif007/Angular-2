@@ -13,8 +13,8 @@ import {EmployeeClass} from './employeee.class';
 import {DepartmentClass} from './department.class';
 @NgModule({
   imports:      [ BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,RouterModule.forRoot([
-    {path:'/department',component:DepartmentClass},
-    {path:'/employees',component:EmployeeClass}
+    {path:'departments',component:DepartmentClass},
+    {path:'employees',component:EmployeeClass}
   ])],
   declarations: [ RouterComponent,EmployeeClass,DepartmentClass],
   bootstrap:    [ RouterComponent]
