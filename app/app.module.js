@@ -11,6 +11,8 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var forms_2 = require("@angular/forms");
 var services_app_component_1 = require("./services.app.component");
+var employee_data_1 = require("./employee.data");
+var employee_data_detail_1 = require("./employee.data.detail");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,7 +21,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_2.FormsModule, forms_1.ReactiveFormsModule],
-        declarations: [services_app_component_1.ServicesComponent],
+        declarations: [services_app_component_1.ServicesComponent, employee_data_1.EmployeeData, employee_data_detail_1.EmployeeDataDetail],
         bootstrap: [services_app_component_1.ServicesComponent]
     })
 ], AppModule);

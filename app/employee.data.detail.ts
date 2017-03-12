@@ -2,14 +2,14 @@ import { Component ,OnInit} from '@angular/core';
 import {FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms';
 import {EmployeeServiceClass} from './app.service.employee'
 @Component({
-  selector: 'employee-data-list',
+  selector: 'employee-data-detail',
   template: `<h2>Wasif Ateeq<h2>
   <ul *ngFor="let emplo of employess">
-  <li>{{emplo.name}}</li>
+  <li>{{emplo.name}} {{emplo.id}}</li>
   <ul>`
  
 })
-export class EmployeeData implements OnInit{
+export class EmployeeDataDetail implements OnInit{
 employess=[];
 
 constructor(private _empl:EmployeeServiceClass){}

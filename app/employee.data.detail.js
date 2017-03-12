@@ -11,22 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var app_service_employee_1 = require("./app.service.employee");
-var EmployeeData = (function () {
-    function EmployeeData(_empl) {
+var EmployeeDataDetail = (function () {
+    function EmployeeDataDetail(_empl) {
         this._empl = _empl;
         this.employess = [];
     }
-    EmployeeData.prototype.ngOnInit = function () {
+    EmployeeDataDetail.prototype.ngOnInit = function () {
         this.employess = this._empl.getEmployeeData();
     };
-    return EmployeeData;
+    return EmployeeDataDetail;
 }());
-EmployeeData = __decorate([
+EmployeeDataDetail = __decorate([
     core_1.Component({
-        selector: 'employee-data-list',
-        template: "<h2>Wasif Ateeq<h2>\n  <ul *ngFor=\"let emplo of employess\">\n  <li>{{emplo.name}}</li>\n  <ul>"
+        selector: 'employee-data-detail',
+        template: "<h2>Wasif Ateeq<h2>\n  <ul *ngFor=\"let emplo of employess\">\n  <li>{{emplo.name}} {{emplo.id}}</li>\n  <ul>"
     }),
     __metadata("design:paramtypes", [app_service_employee_1.EmployeeServiceClass])
-], EmployeeData);
-exports.EmployeeData = EmployeeData;
-//# sourceMappingURL=employee.data.js.map
+], EmployeeDataDetail);
+exports.EmployeeDataDetail = EmployeeDataDetail;
+//# sourceMappingURL=employee.data.detail.js.map

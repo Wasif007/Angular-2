@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var app_service_employee_1 = require("./app.service.employee");
 var ServicesComponent = (function () {
     function ServicesComponent() {
     }
@@ -15,7 +16,8 @@ var ServicesComponent = (function () {
 ServicesComponent = __decorate([
     core_1.Component({
         selector: 'employee-data',
-        template: "<h1>Wasif</h1>"
+        template: "<h1>Wasif</h1>\n  <employee-data-list></employee-data-list>\n  <employee-data-detail></employee-data-detail>",
+        providers: [app_service_employee_1.EmployeeServiceClass]
     })
 ], ServicesComponent);
 exports.ServicesComponent = ServicesComponent;

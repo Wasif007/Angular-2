@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 
 @Injectable()
-class EmployeeServiceClass{
+export class EmployeeServiceClass{
     getEmployeeData(){
         return [
             {"id":1,"name":"Wasif","address":"Gulberg"},

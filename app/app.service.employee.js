@@ -21,4 +21,5 @@ var EmployeeServiceClass = (function () {
 EmployeeServiceClass = __decorate([
     core_1.Injectable()
 ], EmployeeServiceClass);
+exports.EmployeeServiceClass = EmployeeServiceClass;
 //# sourceMappingURL=app.service.employee.js.map
