@@ -11,12 +11,11 @@ import {RouterModule} from '@angular/router';
 import {RouterComponent} from  './router.class';
 import {EmployeeClass} from './employeee.class';
 import {DepartmentClass} from './department.class';
+import{AppModuleRouter} from './app.module.router';
+import {routingComponent} from './app.module.router';
 @NgModule({
-  imports:      [ BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,RouterModule.forRoot([
-    {path:'departments',component:DepartmentClass},
-    {path:'employees',component:EmployeeClass}
-  ])],
-  declarations: [ RouterComponent,EmployeeClass,DepartmentClass],
+  imports:      [ BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,AppModuleRouter],
+  declarations: [ RouterComponent,routingComponent],
   bootstrap:    [ RouterComponent]
 })
 export class AppModule { }
