@@ -22,7 +22,7 @@ var DepartmentClass = (function () {
         ];
     }
     DepartmentClass.prototype.ngSelect = function (deparment) {
-        this.router.navigate(['/departments', deparment.id]);
+        this.router.navigate([deparment.id], { relativeTo: this.route });
     };
     DepartmentClass.prototype.ngOnInit = function () {
         var _this = this;

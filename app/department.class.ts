@@ -24,7 +24,7 @@ departments=[
 
 ngSelect(deparment)
 {
-  this.router.navigate(['/departments',deparment.id]);
+  this.router.navigate([deparment.id],{relativeTo:this.route});
 }
 
 ngOnInit()
