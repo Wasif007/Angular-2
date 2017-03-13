@@ -10,9 +10,11 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var employeee_class_1 = require("./employeee.class");
 var department_class_1 = require("./department.class");
+var department_detail_class_1 = require("./department.detail.class");
 var routes = [
     { path: 'departments', component: department_class_1.DepartmentClass },
-    { path: 'employees', component: employeee_class_1.EmployeeClass }
+    { path: 'employees', component: employeee_class_1.EmployeeClass },
+    { path: 'departments/:id', component: department_detail_class_1.DepartmentDetailClass }
 ];
 var AppModuleRouter = (function () {
     function AppModuleRouter() {
@@ -30,5 +32,5 @@ AppModuleRouter = __decorate([
     })
 ], AppModuleRouter);
 exports.AppModuleRouter = AppModuleRouter;
-exports.routingComponent = [employeee_class_1.EmployeeClass, department_class_1.DepartmentClass];
+exports.routingComponent = [employeee_class_1.EmployeeClass, department_class_1.DepartmentClass, department_detail_class_1.DepartmentDetailClass];
 //# sourceMappingURL=app.module.router.js.map

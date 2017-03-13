@@ -11,26 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var DepartmentClass = (function () {
-    function DepartmentClass(router) {
+var DepartmentDetailClass = (function () {
+    function DepartmentDetailClass(router) {
         this.router = router;
-        this.departments = [
-            { "id": 1, "name": "Angular" },
-            { "id": 2, "name": "Node" },
-            { "id": 3, "name": "MongoDb" }
-        ];
     }
-    DepartmentClass.prototype.ngSelect = function (deparment) {
-        this.router.navigate(['/departments', deparment.id]);
+    DepartmentDetailClass.prototype.ngOnInit = function () {
+        var id = this.router.snapshot.params['id'];
+        this.departmentId = id;
     };
-    return DepartmentClass;
+    return DepartmentDetailClass;
 }());
-DepartmentClass = __decorate([
+DepartmentDetailClass = __decorate([
     core_1.Component({
-        selector: 'deparment-class',
-        template: "<h4>deparment Area</h4>\n  <ul class=\"items\">\n  <li (click)=\"ngSelect(deparment)\" *ngFor=\"let deparment of departments\">\n  <span class=\"badge\">{{deparment.id}}</span> {{deparment.name}}\n  </li>\n  </ul>\n  \n  ",
+        template: "<h4>deparment Detail Area</h4>\n                Department id is {{departmentId}}",
     }),
-    __metadata("design:paramtypes", [router_1.Router])
-], DepartmentClass);
-exports.DepartmentClass = DepartmentClass;
-//# sourceMappingURL=department.class.js.map
+    __metadata("design:paramtypes", [router_1.ActivatedRoute])
+], DepartmentDetailClass);
+exports.DepartmentDetailClass = DepartmentDetailClass;
+//# sourceMappingURL=department.detail.class.js.map
