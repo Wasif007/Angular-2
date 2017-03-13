@@ -11,10 +11,14 @@ var router_1 = require("@angular/router");
 var employeee_class_1 = require("./employeee.class");
 var department_class_1 = require("./department.class");
 var department_detail_class_1 = require("./department.detail.class");
+var home_component_1 = require("./home.component");
+var page_not_found_1 = require("./page-not-found");
 var routes = [
+    { path: '', component: home_component_1.HomeComponent },
     { path: 'departments', component: department_class_1.DepartmentClass },
     { path: 'employees', component: employeee_class_1.EmployeeClass },
-    { path: 'departments/:id', component: department_detail_class_1.DepartmentDetailClass }
+    { path: 'departments/:id', component: department_detail_class_1.DepartmentDetailClass },
+    { path: "**", component: page_not_found_1.PageComponent }
 ];
 var AppModuleRouter = (function () {
     function AppModuleRouter() {
@@ -32,5 +36,5 @@ AppModuleRouter = __decorate([
     })
 ], AppModuleRouter);
 exports.AppModuleRouter = AppModuleRouter;
-exports.routingComponent = [employeee_class_1.EmployeeClass, department_class_1.DepartmentClass, department_detail_class_1.DepartmentDetailClass];
+exports.routingComponent = [page_not_found_1.PageComponent, home_component_1.HomeComponent, employeee_class_1.EmployeeClass, department_class_1.DepartmentClass, department_detail_class_1.DepartmentDetailClass];
 //# sourceMappingURL=app.module.router.js.map

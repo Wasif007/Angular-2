@@ -5,12 +5,15 @@ import {RouterComponent} from  './router.class';
 import {EmployeeClass} from './employeee.class';
 import {DepartmentClass} from './department.class';
 import {DepartmentDetailClass} from './department.detail.class';
-
+import {HomeComponent} from './home.component';
+import {PageComponent} from './page-not-found';
 
 const routes:Routes=[
+    {path:'',component:HomeComponent},
     {path:'departments',component:DepartmentClass},
     {path:'employees',component:EmployeeClass},
-    {path:'departments/:id',component:DepartmentDetailClass}
+    {path:'departments/:id',component:DepartmentDetailClass},
+    {path:"**",component:PageComponent}
 ];
 
 @NgModule({
@@ -24,4 +27,4 @@ RouterModule
 })
 
 export class AppModuleRouter{}
-export const routingComponent=[EmployeeClass,DepartmentClass,DepartmentDetailClass];
+export const routingComponent=[PageComponent,HomeComponent,EmployeeClass,DepartmentClass,DepartmentDetailClass];
