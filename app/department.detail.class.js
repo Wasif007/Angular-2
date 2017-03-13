@@ -12,20 +12,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var DepartmentDetailClass = (function () {
-    function DepartmentDetailClass(router) {
+    function DepartmentDetailClass(router, routers) {
         this.router = router;
+        this.routers = routers;
     }
     DepartmentDetailClass.prototype.ngOnInit = function () {
-        var id = this.router.snapshot.params['id'];
-        this.departmentId = id;
+        var _this = this;
+        this.router.params.subscribe(function (paramss) {
+            var id = parseInt(paramss['id']);
+            _this.departmentId = id;
+        });
+    };
+    DepartmentDetailClass.prototype.ngPrevious = function () {
+        var previousId = this.departmentId - 1;
+        this.routers.navigate(['/departments', previousId]);
+    };
+    DepartmentDetailClass.prototype.ngNext = function () {
+        var nextId = this.departmentId + 1;
+        this.routers.navigate(['/departments', nextId]);
     };
     return DepartmentDetailClass;
 }());
 DepartmentDetailClass = __decorate([
     core_1.Component({
-        template: "<h4>deparment Detail Area</h4>\n                Department id is {{departmentId}}",
+        template: "<h4>deparment Detail Area</h4>\n                Department id is {{departmentId}}\n                <br>\n                <a (click)=\"ngPrevious()\">Previous</a>\n                <a (click)=\"ngNext()\">Next</a>\n                ",
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
 ], DepartmentDetailClass);
 exports.DepartmentDetailClass = DepartmentDetailClass;
 //# sourceMappingURL=department.detail.class.js.map
