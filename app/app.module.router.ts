@@ -9,7 +9,7 @@ import {HomeComponent} from './home.component';
 import {PageComponent} from './page-not-found';
 
 const routes:Routes=[
-    {path:'',component:HomeComponent},
+    {path:'',redirectTo:'/departments', pathMatch:'full'},
     {path:'departments',component:DepartmentClass},
     {path:'employees',component:EmployeeClass},
     {path:'departments/:id',component:DepartmentDetailClass},
