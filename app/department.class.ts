@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import {Router} from '@angular/router'
+import { Component ,OnInit} from '@angular/core';
+import {Router,ActivatedRoute,Params} from '@angular/router'
 @Component({
   selector: 'deparment-class',
   template: `<h4>deparment Area</h4>
   <ul class="items">
-  <li (click)="ngSelect(deparment)" *ngFor="let deparment of departments">
+  <li (click)="ngSelect(deparment)" [class.selected]="ngColor(deparment)" *ngFor="let deparment of departments">
   <span class="badge">{{deparment.id}}</span> {{deparment.name}}
   </li>
   </ul>
@@ -12,9 +12,10 @@ import {Router} from '@angular/router'
   `,
  
 })
-export class DepartmentClass{ 
+export class DepartmentClass implements OnInit{ 
 
-  constructor(private router:Router){}
+public selectedId;
+  constructor(private router:Router,private route:ActivatedRoute){}
 departments=[
   {"id":1,"name":"Angular"},
   {"id":2,"name":"Node"},
@@ -25,4 +26,18 @@ ngSelect(deparment)
 {
   this.router.navigate(['/departments',deparment.id]);
 }
+
+ngOnInit()
+{
+   this.route.params.subscribe((paramss:Params)=>{
+        let id=parseInt(paramss['id']);
+        this.selectedId=id;
+    });
 }
+
+ngColor(department)
+{
+  return this.selectedId===department.id;
+}
+}
+

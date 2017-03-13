@@ -6,6 +6,8 @@ import {ActivatedRoute,Router,Params} from '@angular/router';
                 <br>
                 <a (click)="ngPrevious()">Previous</a>
                 <a (click)="ngNext()">Next</a>
+               <p> <button (click)="ngBack()">Back</button>
+                </p>
                 `
                 
                 ,
@@ -29,5 +31,10 @@ ngNext()
 {
 let nextId=this.departmentId+1;
   this.routers.navigate(['/departments',nextId]);
+}
+ngBack()
+{
+    let backId=this.departmentId? this.departmentId :null;
+    this.routers.navigate(['/departments',{id:backId}]);
 }
 }

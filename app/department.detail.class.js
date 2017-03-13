@@ -31,11 +31,15 @@ var DepartmentDetailClass = (function () {
         var nextId = this.departmentId + 1;
         this.routers.navigate(['/departments', nextId]);
     };
+    DepartmentDetailClass.prototype.ngBack = function () {
+        var backId = this.departmentId ? this.departmentId : null;
+        this.routers.navigate(['/departments', { id: backId }]);
+    };
     return DepartmentDetailClass;
 }());
 DepartmentDetailClass = __decorate([
     core_1.Component({
-        template: "<h4>deparment Detail Area</h4>\n                Department id is {{departmentId}}\n                <br>\n                <a (click)=\"ngPrevious()\">Previous</a>\n                <a (click)=\"ngNext()\">Next</a>\n                ",
+        template: "<h4>deparment Detail Area</h4>\n                Department id is {{departmentId}}\n                <br>\n                <a (click)=\"ngPrevious()\">Previous</a>\n                <a (click)=\"ngNext()\">Next</a>\n               <p> <button (click)=\"ngBack()\">Back</button>\n                </p>\n                ",
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
 ], DepartmentDetailClass);
