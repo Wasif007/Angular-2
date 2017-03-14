@@ -13,9 +13,10 @@ import {EmployeeClass} from './employeee.class';
 import {DepartmentClass} from './department.class';
 import{AppModuleRouter} from './app.module.router';
 import {routingComponent} from './app.module.router';
+import {AnimationClass} from './app.animation.class';
 @NgModule({
   imports:      [ BrowserModule,FormsModule,ReactiveFormsModule,HttpModule,AppModuleRouter],
-  declarations: [ RouterComponent,routingComponent],
-  bootstrap:    [ RouterComponent]
+  declarations: [ RouterComponent,routingComponent,AnimationClass],
+  bootstrap:    [ AnimationClass]
 })
 export class AppModule { }

@@ -14,6 +14,7 @@ var http_1 = require("@angular/http");
 var router_class_1 = require("./router.class");
 var app_module_router_1 = require("./app.module.router");
 var app_module_router_2 = require("./app.module.router");
+var app_animation_class_1 = require("./app.animation.class");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,8 +23,8 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_2.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_module_router_1.AppModuleRouter],
-        declarations: [router_class_1.RouterComponent, app_module_router_2.routingComponent],
-        bootstrap: [router_class_1.RouterComponent]
+        declarations: [router_class_1.RouterComponent, app_module_router_2.routingComponent, app_animation_class_1.AnimationClass],
+        bootstrap: [app_animation_class_1.AnimationClass]
     })
 ], AppModule);
 exports.AppModule = AppModule;
