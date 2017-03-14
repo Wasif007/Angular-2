@@ -28,7 +28,7 @@ AnimationClass = __decorate([
                 core_1.state("on", core_1.style({
                     backgroundColor: 'white'
                 })),
-                core_1.transition("off => on", [core_1.animate('2s')]),
+                core_1.transition("off => on", [core_1.animate('2s', core_1.style({ transform: 'rotate(90deg)' }))]),
                 core_1.transition("on => off", [core_1.animate('2s')])
             ])
         ]
